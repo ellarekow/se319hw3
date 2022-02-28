@@ -71,10 +71,13 @@ let stop = null;
 
 function start() {
 
-    if (stop == null)
+    if (stop == null) {
         stop = setInterval(movement, 50);
+        document.getElementById("start").textContent = "Stop";
+    }
     else {
         clearInterval(stop);
         stop = null;
+        document.getElementById("start").textContent = "Start";
     }
 }
